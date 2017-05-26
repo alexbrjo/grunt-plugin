@@ -1,0 +1,19 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+
+     <!--- Selects NodeJS installation. Corresponds to Grunt.setNode() --->
+     <f:entry title="${%NodeJS Installation}" field="nodeName">
+         <select class="setting-input" name="nodeName">
+             <option selected="${instance.nodeName == null}">None</option>
+             <j:forEach var="installation" items="${descriptor.installations}">
+                 <f:option selected="${installation.name == instance.nodeName}">${installation.name}</f:option>
+             </j:forEach>
+         </select>
+     </f:entry>
+
+     <!--- Sets the Grunt tasks to run. Corresponds to Grunt.setTask(String) and Grunt.getTask() --->
+     <f:entry title="${%Tasks}" field="tasks">
+           <f:expandableTextbox/>
+     </f:entry>
+
+</j:jelly>

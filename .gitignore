@@ -1,0 +1,11 @@
+# Build and Test files
+*.class
+/target/
+/work/
+
+# Other log or System files
+*.log
+.DS_Store
+*.iml
+
+.idea/
